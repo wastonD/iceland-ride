@@ -1,0 +1,21 @@
+{
+  "name": "iceland-ride",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Iceland Ride — a calm browser 3D ride: electric longboard down an Icelandic fjord, plus a rainforest walk",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "assets:fetch": "node tools/fetch-polyhaven.mjs",
+    "assets:pack": "powershell -NoProfile -ExecutionPolicy Bypass -File tools/pack-assets.ps1"
+  },
+  "dependencies": {
+    "three": "0.170.0"
+  },
+  "devDependencies": {
+    "vite": "^8.3.1",
+    "vite-plugin-singlefile": "^2.3.3"
+  }
+}

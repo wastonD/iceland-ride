@@ -4,9 +4,18 @@ A calm, browser-based 3D ride: an electric longboard down an Icelandic fjord val
 
 一个在浏览器里运行的 3D 解压漫游：踩着电动长板滑下冰岛峡湾山谷，也可以去雨林里走走。风声、雨声、滑板声和幽静的钢琴，全部在浏览器里实时合成。
 
-**▶ Play / 开始：** https://wastonD.github.io/iceland-ride/
+**▶ Play / 开始：https://wastonD.github.io/iceland-ride/**
 
 Headphones recommended · 建议戴耳机 · Desktop browser with WebGL2 (Chrome / Edge / Firefox) · 推荐电脑端 Chrome / Edge / Firefox
+
+![Plateau lake and snow peaks · 高原湖与雪峰](docs/screenshots/01-lake.jpg)
+
+| | |
+|---|---|
+| ![Lupine pasture · 羽扇豆牧场](docs/screenshots/03-pasture.jpg) | ![Down to the fjord village · 驶向峡湾小镇](docs/screenshots/04-coast.jpg) |
+| ![Sit and enjoy the view · 坐下欣赏](docs/screenshots/05-sit.jpg) | ![First-person ride · 第一人称](docs/screenshots/06-firstperson.jpg) |
+
+![Rainforest walk · 雨林漫步](docs/screenshots/07-rainforest.jpg)
 
 ## Controls · 操作
 
@@ -24,6 +33,25 @@ Headphones recommended · 建议戴耳机 · Desktop browser with WebGL2 (Chrome
 
 Language, weather, colour look and quality can be changed any time from the panel (bottom-right).
 语言、天气、色调、画质都可以在右下角面板里随时切换。
+
+## Run locally · 本地运行
+
+Requires Node.js 20+ · 需要 Node.js 20 以上
+
+```bash
+npm install
+npm run dev        # http://localhost:5178  (?scene=fjord | rainforest)
+npm run build      # → dist/
+```
+
+The photo-scanned assets are already in `public/assets/ph/`. To re-download and re-pack them from Poly Haven: `npm run assets:fetch` then `npm run assets:pack` (Windows PowerShell).
+
+## How it's made · 技术
+
+- [three.js](https://threejs.org) + [Vite](https://vite.dev), plain JavaScript, no game engine
+- Custom HDR pipeline: TAA, GTAO, screen-space water reflections, volumetric light, film tone curve and grading, cloud shadows
+- Longboard physics with tyre friction (grip → slide → crash only when you overcook a bend), kickers, a 3.8 km descent
+- All audio synthesized with the Web Audio API: rain, wind, wheels, wildlife and a generative piano score
 
 ## Credits · 致谢
 
